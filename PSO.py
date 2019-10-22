@@ -1,6 +1,6 @@
 import numpy as np
 
-class StandardParticleSwarmOptimization(Optimization):
+class StandardParticleSwarmOptimization:
     def __init__(self, it=20, popSize=10, w=0.9, c1=1, c2=1, minimization=True, silent=True):
         self.minimization = minimization
         self.silent = silent
@@ -11,7 +11,6 @@ class StandardParticleSwarmOptimization(Optimization):
         self.c2 = c2
         self.bestSolution = None
         self.bestObj = None
-        super().__init__()
 
     def sortedFirstBySecond(self, first, second, reverse=False):
         index = np.array(sorted(range(len(second)), key=lambda k: second[k], reverse=reverse))
